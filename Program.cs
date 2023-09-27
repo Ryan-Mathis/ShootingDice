@@ -17,10 +17,45 @@ player3.Play(player2);
 
 Console.WriteLine("-------------------");
 
+SmackTalkingPlayer player4 = new SmackTalkingPlayer();
+player4.Name = "Smacky";
+
+player4.Play(player3);
+
+Console.WriteLine("-------------------");
+
 Player large = new LargeDicePlayer();
 large.Name = "Bigun Rollsalot";
 
 player1.Play(large);
+
+Console.WriteLine("-------------------");
+
+OneHigherPlayer player5 = new OneHigherPlayer();
+player5.Name = "Smirky";
+
+player5.Play(large);
+
+Console.WriteLine("-------------------");
+
+HumanPlayer player6 = new HumanPlayer();
+player6.Name = "HumanName1";
+
+player5.Play(player6);
+
+Console.WriteLine("-------------------");
+
+CreativeSmackTalkingPlayer player7 = new CreativeSmackTalkingPlayer();
+player7.Name = "Smackums";
+
+player7.Play(player3);
+
+Console.WriteLine("-------------------");
+
+SoreLoserPlayer player8 = new SoreLoserPlayer();
+player8.Name = "Sorey";
+
+player8.Play(player3);
 
 Console.WriteLine("-------------------");
 
@@ -53,7 +88,7 @@ static void PlayMany(List<Player> players)
     {
         Console.WriteLine("-------------------");
 
-        // Make adjacent players play noe another
+        // Make adjacent players play one another
         Player player1 = shuffledPlayers[i];
         Player player2 = shuffledPlayers[i + 1];
         player1.Play(player2);
