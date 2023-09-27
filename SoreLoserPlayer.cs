@@ -8,30 +8,22 @@ public class SoreLoserPlayer : Player
     public override void Play(Player other)
     {
         // Call roll for "this" object and for the "other" object
-        int myRoll = 0;
-
-        while (myRoll == 0)
+        int myRoll = Roll();
+        int otherRoll = other.Roll();
+        Console.WriteLine($"{Name} rolls a {myRoll}");
+        Console.WriteLine($"{other.Name} rolls a {otherRoll}");
+        if (myRoll > otherRoll)
         {
-            try
-            {
-                myRoll = Roll();
-                int otherRoll = other.Roll();
-                Console.WriteLine($"{Name} rolls a {myRoll}");
-                Console.WriteLine($"{other.Name} rolls a {otherRoll}");
-                if (myRoll > otherRoll)
-                {
-                    Console.WriteLine($"{Name} Wins!");
-                }
-                else if (myRoll == otherRoll)
-                {
-                    // if the rolls are equal it's a tie
-                    Console.WriteLine("It's a tie");
-                }
-            }
-            catch
-            {
-                Console.WriteLine("This game was rigged from the start!");
-            }
+            Console.WriteLine($"{Name} Wins!");
+        }
+        else if (myRoll < otherRoll)
+        {
+            throw new NotSupportedException($"{Name} says: This game was rigged from the start!");
+        }
+        else
+        {
+            // if the rolls are equal it's a tie
+            Console.WriteLine("It's a tie");
         }
     }
 }

@@ -59,8 +59,32 @@ player8.Play(player3);
 
 Console.WriteLine("-------------------");
 
+UpperHalfPlayer player9 = new UpperHalfPlayer();
+player9.Name = "Lucky";
+
+player9.Play(player5);
+
+Console.WriteLine("-------------------");
+
+SoreLoserUpperHalfPlayer player10 = new SoreLoserUpperHalfPlayer();
+player10.Name = "Lucky-Sorey";
+
+player10.Play(player3);
+
+Console.WriteLine("-------------------");
+
 List<Player> players = new List<Player>() {
-    player1, player2, player3, large
+    player1, 
+    player2, 
+    player3, 
+    large, 
+    player10, 
+    player9, 
+    player8, 
+    player7, 
+    player6,
+    player5,
+    player4
 };
 
 PlayMany(players);
